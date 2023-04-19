@@ -39,7 +39,7 @@ export default async (req, res) => {
         res.status(400).json({ success: false });
       }
       break;
-    case "<DELETE></DELETE>":
+    case "DELETE":
       try {
         const hero = await Hero.deleteOne({ _id: id });
         if (!hero) {
