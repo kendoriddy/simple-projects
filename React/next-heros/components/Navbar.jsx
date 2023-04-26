@@ -8,7 +8,7 @@ const Navbar = () => {
       <Link className="navbar-brand" href="/">
         SuperHero Identity
       </Link>
-      <Link href="/new">
+      <Link href="/add">
         <MDBBtn color="primary">Create New Identity</MDBBtn>
       </Link>
     </nav>
