@@ -20,7 +20,7 @@ const index = ({ heroes }) => {
                 <Link href={`/${hero._id}`}>
                   <MDBBtn className='mx-2'>View Hero</MDBBtn>
                 </Link>
-                <Link href={`/${hero._id}`}>
+                <Link href={`/${hero._id}/edit`}>
                   <MDBBtn>Edit Hero</MDBBtn>
                 </Link>
               </MDBCardBody>

@@ -24,7 +24,12 @@ const EachHero = ({ hero }) => {
         <MDBCardBody>
           <MDBCardTitle>{hero.superhero}</MDBCardTitle>
           <MDBCardText>{hero.realName}</MDBCardText>
-          <MDBBtn onClick={handleDelete} className="btn btn-danger">Delete Hero</MDBBtn>
+          <MDBBtn onClick={handleDelete} className="btn btn-danger me-2">
+            Delete Hero
+          </MDBBtn>
+          <Link href={`/${hero._id}/edit`}>
+            <MDBBtn className="btn btn-primary">Edit Hero</MDBBtn>
+          </Link>
         </MDBCardBody>
       </MDBCard>
     </div>
