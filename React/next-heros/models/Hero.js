@@ -5,7 +5,7 @@ const HeroSchema = new mongoose.Schema({
     type: String,
     required: [true, "Please name the hero"],
     unique: true,
-    minlength: [3, "Name must be at least 3 characters long"],
+    minlength: [1, "Name must be at least 3 characters long"],
     trim: true,
   },
   realName: {

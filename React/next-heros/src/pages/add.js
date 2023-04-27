@@ -18,11 +18,15 @@ const AddNewHero = () => {
   };
   const handleForm = async (e) => {
     e.preventDefault();
-    try {
-      const res = await axios.post("http://localhost:3000/api/hero", form);
-      Router.push("/");
-    } catch (error) {
-      console.log(error);
+    if (form.superhero === "" || form.realName === "") {
+      alert("Fill all fields please");
+    } else {
+      try {
+        const res = await axios.post("http://localhost:3000/api/hero", form);
+        Router.push("/");
+      } catch (error) {
+        console.log(error);
+      }
     }
   };
 
@@ -31,8 +35,16 @@ const AddNewHero = () => {
       <h1 className="diplay-3">Add a New Hero Identity</h1>
       <form>
         <MDBInput type="text" label="Superhero Name" name="superhero" onChange={handleChange} />
-        <MDBInput type="text" label="Real Name" name="realName" onChange={handleChange} className="my-2" />
-        <MDBBtn type="submit" onClick={handleForm} className="mb-2">Add New Hero</MDBBtn>
+        <MDBInput
+          type="text"
+          label="Real Name"
+          name="realName"
+          onChange={handleChange}
+          className="my-2"
+        />
+        <MDBBtn type="submit" onClick={handleForm} className="mb-2">
+          Add New Hero
+        </MDBBtn>
       </form>
     </div>
   );

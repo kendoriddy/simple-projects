@@ -17,10 +17,10 @@ const index = ({ heroes }) => {
               <MDBCardBody>
                 <MDBCardTitle>{hero.superhero}</MDBCardTitle>
                 <MDBCardText>Reveal Identity</MDBCardText>
-                <Link href={'/'}>
+                <Link href={`/${hero._id}`}>
                   <MDBBtn className='mx-2'>View Hero</MDBBtn>
                 </Link>
-                <Link href={'/'}>
+                <Link href={`/${hero._id}`}>
                   <MDBBtn>Edit Hero</MDBBtn>
                 </Link>
               </MDBCardBody>
@@ -32,19 +32,10 @@ const index = ({ heroes }) => {
   );
 };
 
-export async function getStaticProps(context) {
-  const res = await axios.get("http://localhost:3000/api/hero");
+export async function getServerSideProps(context) {
+  const res = await axios("http://localhost:3000/api/hero");
   console.log(res.data.data);
   const { hero } = res.data.data;
-  // Replace any undefined values with null values
-  const serializedHero = JSON.parse(
-    JSON.stringify(hero, (key, value) => {
-      if (typeof value === "undefined") {
-        return null;
-      }
-      return value;
-    })
-  );
 
   return {
     props: { heroes: res.data.data },
