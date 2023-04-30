@@ -5,8 +5,9 @@ const axios = require("axios").default;
 const index = ({ heroes }) => {
   return (
     <div>
-      <h1 className="diplay-2 container">SuperHero Manager</h1>
-      <div className="container">
+      <h1 className="diplay-2 container">PROJECT PREVENGERS</h1>
+      <p className="diplay-2 container">Earth Last Defenders Against Evil Forces</p>
+      <div className="container" style={{display: 'flex', flexWrap: 'wrap', columnGap: '10px'}}>
         {heroes?.map((hero) => {
           return (
             <MDBCard
