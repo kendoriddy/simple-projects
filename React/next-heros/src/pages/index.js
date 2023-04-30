@@ -6,7 +6,7 @@ const index = ({ heroes }) => {
   return (
     <div>
       <h1 className="diplay-2 container">SuperHero Manager</h1>
-      <div className="container">
+      <div className="container" style={{display: 'flex', flexWrap: 'wrap', columnGap: '10px'}}>
         {heroes?.map((hero) => {
           return (
             <MDBCard
